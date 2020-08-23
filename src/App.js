@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1 style={styles.centeredTitle}>React Countries</h1>
+      <h1 style={styles.centeredTitle}>Filter Countries</h1>
       <Header
         filter={userFilter}
         countryCount={filteredCountries.length}
