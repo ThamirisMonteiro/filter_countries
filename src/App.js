@@ -11,16 +11,17 @@ export default function App() {
 
   useEffect(() => {
     const getCountries = async () => {
-      const res = await fetch('https://restcountries.eu/rest/v2/all');
+      const res = await fetch('https://restcountries.com/v3.1/all');
       let allCountries = await res.json();
 
       allCountries = allCountries.map(
-        ({ name, numericCode, flag, population }) => {
+        ({ name, numericCode, flags, population }) => {
+        console.log(flags.png);
           return {
             id: numericCode,
-            name,
-            filterName: name.toLowerCase(),
-            flag,
+            name: name.common,
+            filterName: name.common.toLowerCase(),
+            flags: flags.png,
             population,
           };
         }
